@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.jsx
+import { useEffect } from 'react';
+import productosOriginales from './productos.js';
 
 function App() {
-  const [count, setCount] = useState(0)
+  useEffect(() => {
+    console.clear();9
 
-  return (
-    <>
+    // Copiamos el array original para no modificarlo directamente
+    let productos = [...productosOriginales];
+
+    console.log("1 - Lista de productos:");
+    productos.forEach(p =>
+      console.log( `Producto: ${p.descripcion} - Precio: $${p.precio}`)
+    );
+
+    console.log(`\n2 - Productos con precio mayor a $20:`);
+    const productosFiltrados = productos.filter(p => p.precio > 20);
+    console.log(productosFiltrados);
+
+    console.log(`\n3 - Productos con precio + IVA (21%):`);
+    const productosConIVA = productos.map(p => ({
+      descripcion: p.descripcion,
+      precio: (p.precio * 1.21).toFixed(2)
+    }));
+    console.log(productosConIVA);
+  }, []);
+
+    return (
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <h1>Ver consola para los resultados</h1>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    );
 }
+  export default App;
 
-export default App
