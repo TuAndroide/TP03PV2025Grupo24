@@ -1,12 +1,21 @@
-# React + Vite
+# 📦 TP03PV2025GRUPO24
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Nuestro proyecto tiene implementado un sistema de tareas el cual nos permite agregar , completar y eliminar tareas
+Y de forma interna, en consola se muestran varios procedimientos sobre el manejo de arrays con una lista de productos
 
-Currently, two official plugins are available:
+---
+# 👥 Participantes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Baca Juan Sebastian (juansebaca)
+Calisaya Gabriel (GabrielCalisaya)
+Carrizo Juan (JuanCarrizo9)
+Romero Fernando (Android)
+Suarez Natali (natalicmk)
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologías utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React + Vite
+- JSX
+- CSS
+- HTML
