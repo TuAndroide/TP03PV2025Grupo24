@@ -1,0 +1,15 @@
+.listaTareas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaciado entre las tareas */
+    padding: 20px;
+    border-radius: 10px; 
+    background: linear-gradient(135deg, #50C878, #3A5F0B); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 
+                inset 0 2px 4px rgba(0, 0, 0, 0.7); 
+    color: #f4f4f4; 
+    font-family: 'Cinzel', serif; 
+    font-size: 18px; 
+    max-width: 600px; /* Ancho máximo */
+    margin: 20px auto; 
+  }

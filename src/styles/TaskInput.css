@@ -1,0 +1,73 @@
+#formularioNuevaTarea {
+    margin: 20px auto; /* Centrado horizontal */
+    padding: 90px; /* Espaciado interno */
+    width: 50%; 
+    border: 90px ridge #af2724; /* Borde del formulario */
+    border-radius: 6px;
+    background: linear-gradient(#da680a, #e66904); /* Fondo degradado */
+    box-shadow:
+      0 4px 16px 0 rgba(2, 80, 43, 0.966), /* Sombra suave principal */
+      0 8px 32px 0 #0958ce70, /* Sombra más difusa */
+      0 1.5px 4px 0 rgba(55, 14, 202, 0.836); /* Sombra sutil de realce */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+  }
+
+#inputNuevaTarea {
+    width: 80%; /* Ajusta el ancho del input */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 20px; /* Bordes redondeados */
+    font-size: 23px; /* Tamaño de la fuente */
+    font-family: 'Cinzel', serif;
+    box-shadow: 
+      0 4px 8px rgba(248, 225, 14, 0.5), /* Sombra principal */
+      inset 0 2px 4px rgba(224, 148, 6, 0.7); /* Sombra interna */
+    transition: all 0.55s ease; /* Transición suave */
+    cursor: pointer;
+  }
+
+#botonAgregarTarea {
+    width: 50%; 
+    padding: 22px; 
+    font-size: 18px; 
+    font-family: 'Cinzel', serif;
+    color: #f4f4f4; 
+    background-color: #05768a; /* Fondo azul oscuro */
+    box-shadow: 
+        0 4px 8px rgba(236, 194, 5, 0.5), 
+        inset 0 2px 4px rgba(7, 229, 245, 0.7); 
+    cursor: pointer; 
+    transition: all 0.3s ease; /* Transición suave para hover */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 1px; 
+}
+
+#botonAgregarTarea:hover {
+
+    background-color: #05558a; 
+    color: #d2cfbb; /* Texto amarillo mostaza */
+    box-shadow: 
+        0 0 10px #b84b4a, /* Resplandor rojo carmesí */
+        inset 0 2px 6px rgba(0, 0, 0, 0.8); /* Sombra interna más intensa */
+    transform: scale(1.020); /* Efecto epico el mouse */
+}
+body{
+    
+    background: linear-gradient(15deg, #17850198, #024b3f); 
+    color: #f4f4f4; 
+    font-family: 'Cinzel', serif; /* Fuente serif */
+    line-height: 0.1; 
+    font-weight: 400; /* Peso de la fuente */
+    text-align: center; 
+    margin: 0; 
+    padding: 200px; ;
+    display: flex; /* Flexbox para centrar contenido */
+    justify-content: center; /* Centrado horizontal */
+    min-width: 320px; 
+    min-height: 100vh; 
+}
+
+  
+

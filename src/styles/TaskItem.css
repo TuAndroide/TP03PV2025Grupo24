@@ -1,0 +1,55 @@
+
+#tarea-items {
+    display: flex; /* Flexbox para centrar contenido */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; 
+    margin: 20px 0; /* Espaciado entre tareas */
+    padding: 10px; 
+    border-radius: 20px; 
+    background-color: #05768a; /* Fondo azul oscuro */
+    box-shadow:
+        0 4px 8px rgba(248, 225, 14, 0.5), /* Sombra principal */
+        inset 0 2px 4px rgba(224, 148, 6, 0.7); /* Sombra interna */
+    transition: all 0.55s ease; 
+    cursor: pointer;
+}
+#texto-tarea {
+    font-size: 20px; 
+    font-family: 'Cinzel', serif; 
+    text-align: center; 
+    margin: 0; /* Sin margen */
+    padding: 0; /* Sin padding */
+}
+#boton-completar {
+    width: 50%; 
+    padding: 10px; 
+    font-size: 18px; /* Tamaño de la fuente */
+    font-family: 'Cinzel', serif; 
+    color: #f4f4f4; 
+    background-color: #05768a; 
+    box-shadow:
+        0 4px 8px rgba(236, 194, 5, 0.5), /* Sombra principal */
+        inset 0 2px 4px rgba(7, 229, 245, 0.7); /* Sombra interna */
+    cursor: pointer; /* Cursor de puntero */
+    
+}
+#boton-completar:hover {
+    background-color: #05558a; /* Fondo azul más oscuro al pasar el mouse */
+    color: #d2cfbb; /* Texto amarillo mostaza */
+    box-shadow:
+        0 0 10px #b84b4a, /* Resplandor rojo carmesí */
+        inset 0 2px 6px rgba(0, 0, 0, 0.8); /* Sombra interna más intensa */
+    transform: scale(1.020); /* Efecto de escala al pasar el mouse */
+}
+#boton-eliminar{
+    width: 50%; 
+    padding: 10px; 
+    font-size: 18px; 
+    font-family: 'Cinzel', serif; 
+    color: #f4f4f4; 
+    background-color: #05768a; 
+    box-shadow:
+        0 4px 8px rgba(236, 194, 5, 0.5), 
+        inset 0 2px 4px rgba(7, 229, 245, 0.7); /* Sombra interna */
+    cursor: pointer; 
+ }
