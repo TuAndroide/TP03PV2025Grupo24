@@ -1,69 +1,110 @@
-// Adicional.jsx
-import { useEffect } from "react";
+import React, { useState } from "react";
+import "./styles/Adicional.css";
 
-// Lista original de productos, con descripción y precio
-const productosOriginales = [
-  { descripcion: "Teclado", precio: 30000 },
-  { descripcion: "Auriculares", precio: 49000 },
-  { descripcion: "Mouse", precio: 15000 },
-  { descripcion: "Monitor", precio: 120000 },
-  { descripcion: "Webcam", precio: 25000 },
-];
+const Productos = () => {
+  const [nombre, setNombre] = useState("");
+  const [precio, setPrecio] = useState("");
+  const [productosMostrados, setProductosMostrados] = useState([]);
 
-function Adicional() {
-  useEffect(() => {
-    console.clear(); // Limpia la consola cada vez que se monta el componente
+  const agregarProducto = () => {
+    if (!nombre || isNaN(precio)) return;
+    const nuevoProducto = {
+      id: Date.now(),
+      nombre,
+      precio: parseFloat(precio),
+      tieneIVA: false,
+    };
 
-    // Creamos una copia del array original para evitar modificarlo directamente
-    let productos = [...productosOriginales];
+    const nuevosProductos = [...productosMostrados, nuevoProducto];
+    setProductosMostrados(nuevosProductos);
+    setNombre("");
+    setPrecio("");
+  };
 
-    console.log("1 - Lista de productos:");
-    productos.forEach((p) =>
-      console.log(`Producto: ${p.descripcion} - Precio: $${p.precio}`)
-    );
+  const filtrarProductos = () => {
+    const filtrados = productosMostrados.filter((p) => p.precio > 20);
+    setProductosMostrados(filtrados);
+  };
 
-    // Filtramos los productos cuyo precio sea mayor a 20 (en la práctica, todos lo son)
-    console.log(`\n2 - Productos con precio mayor a $20:`);
-    const productosFiltrados = productos.filter((p) => p.precio > 20);
-    console.log(productosFiltrados);
+  const agregarIVA = () => {
+    const conIVA = productosMostrados.map((p) => {
+      if (p.tieneIVA) {
+        return p;
+      } else {
+        return {
+          ...p,
+          precio: +(p.precio * 1.21).toFixed(2),
+          tieneIVA: true,
+        };
+      }
+    });
 
-    // Calculamos el precio con IVA (21%) para cada producto
-    console.log(`\n3 - Productos con precio + IVA (21%):`);
-    const productosConIVA = productos.map((p) => ({
-      descripcion: p.descripcion,
-      precio: (p.precio * 1.21),
-    }));
-    console.log(productosConIVA);
+    setProductosMostrados(conIVA);
+  };
 
-    // Ordenamos los productos de menor a mayor según el precio
-    const ordenarPorPrecioMayorMenor = productos.sort(
+  const ordenarPorPrecioMenorMayor = () => {
+    const ordenados = [...productosMostrados].sort(
       (a, b) => a.precio - b.precio
     );
-    console.log(`\n4 - Productos ordenados por precio de menor a mayor:`);
-    console.log(ordenarPorPrecioMayorMenor);
+    setProductosMostrados(ordenados);
+  };
 
-    // Agregamos un nuevo producto al final del array
-    const nuevoProducto = {
-      descripcion: "Parlante Bluetooth",
-      precio: 59000.90,
-    };
-    const nuevoArray = [...ordenarPorPrecioMayorMenor];
-    nuevoArray.push(nuevoProducto);
-    console.log(`\n5 - Producto agregado:`);
-    console.log(nuevoArray);
-
-    // Buscamos el precio más bajo en el nuevo array
-    const precioMasBajo = Math.min(...nuevoArray.map((p) => p.precio));
-    console.log("\nPrecio más bajo encontrado:", precioMasBajo);
-
-    // Eliminamos todos los productos que tengan ese precio más bajo
-    const productosSinMasBaratos = nuevoArray.filter(
+  const quitarMasBajo = () => {
+    const precioMasBajo = Math.min(...productosMostrados.map((p) => p.precio));
+    const productosSinMasBajo = productosMostrados.filter(
       (p) => p.precio !== precioMasBajo
     );
-    console.log("\nLista sin el producto con el precio más bajo:");
-    console.log(productosSinMasBaratos);
+    setProductosMostrados(productosSinMasBajo);
+  };
 
-  }, []); // Solo se ejecuta una vez al montar el componente
+  return (
+    <div style={{ fontFamily: "Arial", padding: "60px" }}>
+      <input
+        type="text"
+        placeholder="Nombre del producto"
+        value={nombre}
+        onChange={(e) => setNombre(e.target.value)}
+      />
+      <input
+        type="number"
+        placeholder="Precio"
+        value={precio}
+        onChange={(e) => setPrecio(e.target.value)}
+      />
+      <button onClick={agregarProducto}>Agregar Producto</button>
+
+      <div style={{ marginTop: "10px" }}>
+        <button onClick={filtrarProductos}>Filtrar</button>
+      </div>
+      <div style={{ marginTop: "10px" }}>
+        <button onClick={agregarIVA}>Agregar IVA</button>
+      </div>
+      <div style={{ marginTop: "10px" }}>
+        <button onClick={ordenarPorPrecioMenorMayor}>Ordenar Por Precio</button>
+      </div>
+      <div style={{ marginTop: "10px" }}>
+        <button onClick={quitarMasBajo}>Eliminar Mas Barato</button>
+      </div>
+
+      <h3>Productos Agregados:</h3>
+      <table className="tabla-productos">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          {productosMostrados.map((p) => (
+            <tr key={p.id}>
+              <td>{p.nombre}</td>
+              <td>${p.precio}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 };
 
-export default Adicional;
+export default Productos;
