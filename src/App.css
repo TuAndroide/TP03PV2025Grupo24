@@ -13,3 +13,7 @@
   margin-bottom: 20px;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+.boton-completar:focus,
+.boton-eliminar:focus {
+  outline: none;
+}
