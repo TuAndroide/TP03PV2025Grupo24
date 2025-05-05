@@ -1,6 +1,6 @@
 import React from 'react';
 import TaskItem from './TaskItem';
-import '../styles/TaskList.css'; // Crear el css con este nombre
+import '../styles/TaskList.css';
 
 function TaskList({ tareas, onMarcarCompletada, onEliminarTarea }) {
   return (

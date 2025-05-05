@@ -1,20 +1,23 @@
 import React from 'react';
-import '../styles/TaskItem.css'; // Crear el css con este nombre
+import '../styles/TaskItem.css';
 
 function TaskItem({ tarea, index, onMarcarCompletada, onEliminarTarea }) {
   return (
-    <li
-      key={index}
-      className='tarea-items'
-      style={{ textDecoration: tarea.completada ? 'line-through' : 'none' }}
-    >
-      <span className="texto-tarea">{tarea.texto}</span>
-      <button className='boton-completar' onClick={() => onMarcarCompletada(index)}>
-        {tarea.completada ? 'Desmarcar' : 'Completar'}
-      </button>
-      <button className='boton-eliminar' onClick={() => onEliminarTarea(index)}>
-        Eliminar
-      </button>
+    <li className='tarea-items' key={index}>
+      <span
+        className="texto-tarea"
+        style={{ textDecoration: tarea.completada ? 'line-through' : 'none' }} //si la tarea se marca como completada, se tacha
+      >
+        {tarea.texto} {/*la tarea aparece*/}
+      </span>
+      <div className='botones-tarea'>
+        <button className='boton-completar' onClick={() => onMarcarCompletada(index)}>
+          {tarea.completada ? 'Desmarcar' : 'Completar'} {/* Muestra Desmarcar si esta completada, Completar si no */}
+        </button>
+        <button className='boton-eliminar' onClick={() => onEliminarTarea(index)}>
+          Eliminar 
+        </button>
+      </div>
     </li>
   );
 }

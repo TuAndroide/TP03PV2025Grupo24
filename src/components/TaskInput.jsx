@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import '../styles/TaskInput.css'; // Crear el css con este nombre
+import '../styles/TaskInput.css';
 
 function TaskInput({ onAgregarTarea }) {
-  // Estados para manejar la nueva tarea que se está escribiendo
+  // Estados para manejar la nueva tarea que se esta escribiendo
   const [nuevaTarea, setNuevaTarea] = useState('');
 
   // Funcion para actualizar el estado cuando el usuario escriba en el input

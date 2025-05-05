@@ -1,72 +1,199 @@
-#formularioNuevaTarea {
-    margin: 20px auto; /* Centrado horizontal */
-    padding: 90px; /* Espaciado interno */
-    width: 50%; 
-    border: 90px ridge #af2724; /* Borde del formulario */
-    border-radius: 6px;
-    background: linear-gradient(#da680a, #e66904); /* Fondo degradado */
-    box-shadow:
-      0 4px 16px 0 rgba(2, 80, 43, 0.966), /* Sombra suave principal */
-      0 8px 32px 0 #0958ce70, /* Sombra más difusa */
-      0 1.5px 4px 0 rgba(55, 14, 202, 0.836); /* Sombra sutil de realce */
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; /* Centra verticalmente */
-    align-items: center; /* Centra horizontalmente */
-  }
+body {
+  background: linear-gradient(15deg, #17850198, #024b3f);
+  color: #f4f4f4;
+  font-family: 'Cinzel', serif;
+  line-height: 0.1;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+#listaDeTareasContainer {
+  margin: 20px auto;
+  padding: 20px;
+  width: 95%;
+  max-width: 800px;
+  border: 4px ridge #af2724;
+  border-radius: 6px;
+  background: linear-gradient(#da680a, #e66904);
+  box-shadow:
+      0 4px 8px rgba(2, 80, 43, 0.966),
+      0 8px 16px 0 #0958ce70,
+      0 1.5px 4px 0 rgba(55, 14, 202, 0.836);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+#listaDeTareasContainer h3 {
+  font-size: 1.5rem;
+  font-family: 'Cinzel', serif;
+  color: #f4f4f4;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
 
 #inputNuevaTarea {
-    width: 80%; /* Ajusta el ancho del input */
-    padding: 20px; /* Espaciado interno */
-    border-radius: 20px; /* Bordes redondeados */
-    font-size: 23px; /* Tamaño de la fuente */
-    font-family: 'Cinzel', serif;
-    box-shadow: 
-      0 4px 8px rgba(248, 225, 14, 0.5), /* Sombra principal */
-      inset 0 2px 4px rgba(224, 148, 6, 0.7); /* Sombra interna */
-    transition: all 0.55s ease; /* Transición suave */
-    cursor: pointer;
-  }
+  width: calc(100% - 40px);
+  max-width: 400px;
+  padding: 1rem;
+  border-radius: 1.25rem;
+  font-size: 1rem;
+  font-family: 'Cinzel', serif;
+  color: #333;
+  background-color: #fff;
+  box-shadow:
+      0 0.25rem 0.5rem rgba(248, 225, 14, 0.5),
+      inset 0 0.125rem 0.25rem rgba(224, 148, 6, 0.7);
+  transition: all 0.55s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin: 10px auto;
+}
 
 #botonAgregarTarea {
-    width: 50%; 
-    padding: 22px; 
-    font-size: 18px; 
-    font-family: 'Cinzel', serif;
-    color: #f4f4f4; 
-    background-color: #05768a; /* Fondo azul oscuro */
-    box-shadow: 
-        0 4px 8px rgba(236, 194, 5, 0.5), 
-        inset 0 2px 4px rgba(7, 229, 245, 0.7); 
-    cursor: pointer; 
-    transition: all 0.3s ease; /* Transición suave para hover */
-    text-transform: uppercase; /* Texto en mayúsculas */
-    letter-spacing: 1px; 
+  width: calc(100% - 40px);
+  max-width: 300px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: 'Cinzel', serif;
+  color: #f4f4f4;
+  background-color: #05768a;
+  box-shadow:
+      0 0.25rem 0.5rem rgba(236, 194, 5, 0.5),
+      inset 0 0.125rem 0.25rem rgba(7, 229, 245, 0.7);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  border: none;
+  border-radius: 0.3125rem;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 #botonAgregarTarea:hover {
-    background-color: #05558a; 
-    color: #d2cfbb; /* Texto amarillo mostaza */
-    box-shadow: 
-        0 0 10px #b84b4a, /* Resplandor rojo carmesí */
-        inset 0 2px 6px rgba(0, 0, 0, 0.8); /* Sombra interna más intensa */
-    transform: scale(1.020); /* Efecto epico el mouse */
-}
-body{
-    
-    background: linear-gradient(15deg, #17850198, #024b3f); 
-    color: #f4f4f4; 
-    font-family: 'Cinzel', serif; /* Fuente serif */
-    line-height: 0.1; 
-    font-weight: 400; /* Peso de la fuente */
-    text-align: center; 
-    margin: 0; 
-    padding: 200px; ;
-    display: flex; /* Flexbox para centrar contenido */
-    justify-content: center; /* Centrado horizontal */
-    min-width: 320px; 
-    min-height: 100vh; 
+  background-color: #05558a;
+  color: #d2cfbb;
+  box-shadow:
+      0 0 0.625rem #b84b4a,
+      inset 0 0.125rem 0.375rem rgba(0, 0, 0, 0.8);
+  transform: scale(1.02);
 }
 
-  
+.lista-tareas {
+  width: 100%;
+  margin: 10px auto;
+  border-collapse: collapse;
+  font-size: 16px;
+  color: #f4f4f4;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex; /* NO TOCAR, mantiene todo en su lugar */
+  align-items: center;
+  box-sizing: border-box;
+}
 
+.tarea-items {
+  display: flex; /* Flexbox para alinear texto y botones en la *misma fila* */
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #05768a;
+  box-shadow:
+      0 0.125rem 0.3125rem rgba(248, 225, 14, 0.5),
+      inset 0 0.0625rem 0.125rem rgba(224, 148, 6, 0.7);
+  transition: all 0.55s ease;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  user-select: none;
+}
+
+.texto-tarea {
+  font-size: 1.125rem;
+  font-family: 'Cinzel', serif;
+  text-align: left;
+  margin: 15px 10px;
+  padding: 0;
+  flex: 1;
+  word-wrap: break-word;
+  min-width: 100px;
+  user-select: none;
+}
+
+.botones-tarea {
+  display: flex;
+  gap: 10px;
+}
+
+.boton-completar {
+  padding: 10px;
+  font-size: 1rem;
+  font-family: 'Cinzel', serif;
+  color: #f4f4f4;
+  background-color: #05768a;
+  box-shadow:
+      0 0.125rem 0.3125rem rgba(236, 194, 5, 0.5),
+      inset 0 0.0625rem 0.125rem rgba(7, 229, 245, 0.7);
+  cursor: pointer;
+  border: none;
+  border-radius: 0.3125rem;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.boton-completar:hover {
+  background-color: #05558a;
+  color: #d2cfbb;
+  box-shadow:
+      0 0 0.625rem #b84b4a,
+      inset 0 0.125rem 0.375rem rgba(0, 0, 0, 0.8);
+  transform: scale(1.02);
+}
+
+.boton-eliminar {
+  padding: 10px;
+  font-size: 1rem;
+  font-family: 'Cinzel', serif;
+  color: #f4f4f4;
+  background-color: #05768a;
+  box-shadow:
+      0 0.125rem 0.3125rem rgba(236, 194, 5, 0.5),
+      inset 0 0.0625rem 0.125rem rgba(7, 229, 245, 0.7);
+  cursor: pointer;
+  border: none;
+  border-radius: 0.3125rem;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.boton-eliminar:hover {
+  background-color: #b84b4a;
+  color: #d2cfbb;
+  box-shadow:
+      0 0 0.625rem #b84b4a,
+      inset 0 0.125rem 0.375rem rgba(0, 0, 0, 0.8);
+  transform: scale(1.02);
+}
